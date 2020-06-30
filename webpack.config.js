@@ -19,10 +19,12 @@ var config = {
     },
     module: {
         rules: [
+            { test: /\.css$/, loader: 'style-loader!css-loader'},
             {
                 test: /\.js?/, //Have a look at all js files
                 include: SRC_DIR,
                 loader: 'babel-loader',
+              //  loader: 'babel-loader && style-loader!css-loader',
                 query: {
                     presets: ["react","es2015", "stage-2"] //presets are in the devDependencies in package.json
                 }
