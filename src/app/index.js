@@ -3,7 +3,8 @@ import { render } from "react-dom";
 
 import { Header } from "./components/Header";
 import { Home } from "./components/Home";
-import styles from "./styles/styles.css";
+import "./styles/styles.css";
+import "./styles/LinkedinPF.png";
 
 class App extends React.Component
 {
@@ -25,6 +26,13 @@ class App extends React.Component
         });
     }
 
+    componentDidMount() {
+        window.addEventListener("scroll",function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky",window.scrollY > 0);
+        })
+    }
+
     render() {
         //Only 1 element may be returned.
         var user = {
@@ -34,12 +42,10 @@ class App extends React.Component
 
         return (
             <div className="container">
-                <Header links={this.state}/>
                 <div className="row">
-                    <div className=".col-xs-10 col-xs-offset-1">
-                       
-                    </div>
+                    <Header links={this.state}/>
                 </div>
+                
                 <div className="row">
                     <div className=".col-xs-10 col-xs-offset-1">
                         <Home name={"Stephen"} age={23} user={user} greet={this.onGreet} changeLink={this.onChangeLinkName.bind(this)}>

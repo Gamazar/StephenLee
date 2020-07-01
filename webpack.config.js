@@ -20,6 +20,7 @@ var config = {
     module: {
         rules: [
             { test: /\.css$/, loader: 'style-loader!css-loader'},
+            { test: /\.(jpg|png)$/, loader: 'url-loader'},
             {
                 test: /\.js?/, //Have a look at all js files
                 include: SRC_DIR,

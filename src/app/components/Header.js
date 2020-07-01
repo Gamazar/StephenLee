@@ -3,14 +3,17 @@ import React, {Component} from "react";
 export const Header = (props) =>
 {
         return(
-            <header>
-                <a href="#" className="logo">Logo</a>
-                <ul>
-                    <li>
-                        {props.links.links.map((link,i) => <a href="#" key={i}>{link}</a>)}
-                    </li>
-                </ul>
-            </header>
+            <div>
+                <header>
+                        <ul>
+                            <li>
+                                {props.links.links.map((link,i) => <a href="#" key={i}>{link}</a>)}
+                            </li>
+                        </ul>
+                </header>
+                <section class="banner"></section>
+            </div>
+           
            
 
             // <nav className="navbar navbar-default">
