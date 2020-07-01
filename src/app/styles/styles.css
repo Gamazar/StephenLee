@@ -1,8 +1,29 @@
+
 body {
     background: #fff;
     min-height:200vh;
 }
 
+#wrapper {
+    display:block;
+    width:auto;
+    margin:auto;
+}
+#header-container {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    background-color:#fff;
+    border-bottom: 1px solid #bbb;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    position: fixed;
+    width:100%;
+    z-index:210;
+}
+
+#head-container .header {
+    position: static;
+    zoom:1;
+}
 header {
     position: fixed;
     top: 0;
@@ -12,11 +33,35 @@ header {
     justify-content: space-between;
     align-items:center;
     transition: 0.6s;
-    padding: 40px 100px;
-    
+    padding: 30px 100px;
+    border-bottom: 1px solid #bbb;
+}
+
+.navHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    transition: 0.6s;
+    padding: 30px 100px;
+    border-bottom: 1px solid #bbb;
 }
 
 header .logo {
+    position: relative;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    transition: 0.6s;
+}
+
+.navHeader .logo {
     position: relative;
     font-weight: 700;
     color: #000;
@@ -40,7 +85,29 @@ header ul li {
 
 }
 
+.navHeader ul li {
+    position:relative;
+    list-style: none;
+
+}
+.navHeader ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 header ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition:0.6s;
+}
+
+.navHeader ul li a {
     position: relative;
     margin: 0 15px;
     text-decoration: none;
@@ -53,17 +120,30 @@ header ul li a {
 header.sticky {
     padding: 5px 100px;
     background: #fff;
+    border-bottom: 1px solid #bbb;
 
 }
 header.sticky .logo, header.sticky ul li a {
     color: #000;
 
 }
+
+.navHeader.sticky .logo, nav.sticky ul li a {
+    color: #000;
+
+}
+.navHeader.sticky {
+    padding: 5px 100px;
+    background: #fff;
+    border-bottom: 1px solid #bbb;
+
+}
  
 .banner {
     position: relative;
     width: 100%;
-    height: 100vh;
-    background: url('LinkedinPF.png');
-    background-size: cover;
+    height: 50vh;
+    background: url('../styles/LinkedinPF.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
